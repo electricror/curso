@@ -1,0 +1,78 @@
+<h1>Bem-vindo , ao painel Administrativo</h1>
+<p>Find me in app/views/dashboard/index.html.erb</p>
+
+
+<h1>Listing instructors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th></th>
+
+  </tr>
+
+<% @instructors.each do |instructor| %>
+  <tr>
+    <td><%= instructor.name %></td>
+    <td><%= instructor.age %></td>
+    <td><%= link_to 'Show', admin_instructor_path(instructor) %></td>
+
+<% end %>
+
+</table>
+
+
+<h1>Listing trainings open</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Price</th>
+    <th>Instructor</th>
+    <th></th>
+  </tr>
+
+<% @training_open.each do |training| %>
+  <tr>
+    <td><%= training.name %></td>
+    <td><%= training.date %></td>
+    <td><%= training.price %></td>
+    <td><%= training.instructor.name %></td>
+    <td><%= link_to 'Show', admin_training_path(training) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+
+<h1>Listing trainings closed</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Price</th>
+    <th>Instructor</th>
+    <th></th>
+
+  </tr>
+
+<% @training_closed.each do |training| %>
+  <tr>
+    <td><%= training.name %></td>
+    <td><%= training.date %></td>
+    <td><%= training.price %></td>
+    <td><%= training.instructor.name %></td>
+    <td><%= link_to 'Show', admin_training_path(training) %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+

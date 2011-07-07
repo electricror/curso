@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @instructor.age %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @instructor.experience %>
+</p>
+
+<p>
+  <b>Qualifications:</b>
+  <%= @instructor.qualifications %>
+</p>
+
+<p>
+  <b>Hobbies:</b>
+  <%= @instructor.hobbies %>
+</p>
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

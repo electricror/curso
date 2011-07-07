@@ -1,0 +1,42 @@
+<h1>Listing trainings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Study load</th>
+    <th>Closed</th>
+    <th>Students</th>
+    <th>Price</th>
+    <th>Objective</th>
+    <th>Target audience</th>
+    <th>Content</th>
+    <th>Instructor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trainings.each do |training| %>
+  <tr>
+    <td><%= training.name %></td>
+    <td><%= training.date %></td>
+    <td><%= training.study_load %></td>
+    <td><%= training.closed %></td>
+    <td><%= training.students %></td>
+    <td><%= training.price %></td>
+    <td><%= training.objective %></td>
+    <td><%= training.target_audience %></td>
+    <td><%= training.content %></td>
+    <td><%= training.instructor.name %></td>
+    <td><%= link_to 'Show', training %></td>
+    <td><%= link_to 'Edit', edit_training_path(training) %></td>
+    <td><%= link_to 'Destroy', training, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Training', new_training_path %>
+

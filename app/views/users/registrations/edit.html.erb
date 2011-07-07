@@ -1,0 +1,79 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+<br />
+<section id="form">
+
+  <section class='sectiondivisao'>
+    <h3 align="center">Dados de Login</h3>
+    <h4 align="center">Estes dados sao referentes ao seu acesso em nosso site</h4>
+    <hr />
+    <p class="left"><%= f.label :email %><br />
+    <%= f.email_field :email , :class => 'input-medio', :placeholder => 'ex: meuemail@gmail.com' %></p>
+
+    <p class="right"><%= f.label 'preencha caso haja mudanças cadastrais' %><br />
+    <%= f.password_field :current_password , :class => 'input-medio' %></p>
+
+    <p class="left"><%= f.label 'Deixei em branco , caso nao precise mudar sua senha' %> <br />
+    <%= f.password_field :password , :class => 'input-medio' , :placeholder => 'ex: 1234bla'%></p>
+
+    <p class="right"><%= f.label 'repita a senha digitada ao lado' %><br />
+    <%= f.password_field :password_confirmation, :class => 'input-medio',  :placeholder => 'ex: 1234bla' %></p>
+
+
+
+  </section>
+
+
+
+  <section class='sectiondivisao'>
+    <h3 align="center">Dados Pessoais</h3>
+    <h4 align="center"> È necessario preenchelos caso futuramente queira fazer a matricula em algum curso, será usado estes dados para concretizar sua matricula com seus dados completos </h4>
+    <hr />
+
+    <p class="left"><%= f.label :nome %><br />
+    <%= f.text_field :nome, :class => 'input-medio', :placeholder => 'ex: Fulano'%></p>
+
+    <p class="right"><%= f.label :sobrenome %><br />
+    <%= f.text_field :sobrenome , :class => 'input-medio', :placeholder => 'ex: Silva'%></p>
+
+    <p class="left"><%= f.label :cpf %><br />
+    <%= f.text_field :cpf ,:class => 'input-medio', :placeholder => 'ex: 000000000-00'%></p>
+
+    <p class="dataright"><%= f.label :datanascimento %><br />
+    <%= f.date_select :datanascimento %></p>
+
+  </section>
+
+
+  <section class='sectiondivisao'>
+    <h3 align="center">Dados de Contato</h3>
+    <h4 align="center">È necessario preenchelos pois é um dos meios de comunicaçao que o curso terá para entrar em contato </h4>
+    <hr />
+    <p class="left"><%= f.label 'Telefone' %><br />
+    <%= f.text_field :tel1, :class => 'input-medio', :placeholder => 'ex: 3333-3333' %></p>
+
+    <p class="right"><%= f.label 'Telefone(outro)' %><br />
+    <%= f.text_field :tel2, :class => 'input-medio', :placeholder => 'ex: 3333-3333'%></p>
+
+    <p class="left"> <%= f.label 'Celular' %><br />
+    <%= f.text_field :cel1, :class => 'input-medio', :placeholder => 'ex: 8888-8888' %></p>
+
+    <p class="right"><%= f.label 'Celular(outro)' %><br />
+    <%= f.text_field :cel2, :class => 'input-medio', :placeholder => 'ex: 8888-8888' %></p>
+
+
+  </section>
+  <br />
+<br />
+
+  <p class="clear"><%= f.submit "Update" %></p>
+</section>
+
+
+<% end %>
+<br />
+
+<%= link_to "Back", :back %>
+

@@ -1,0 +1,14 @@
+#form{width:680px;margin:0 auto;padding:20px;}
+#form p{margin-left:40px;}
+#subject{text-align:center}
+.left{float:left}
+.right{float:right; margin-right:40px;}
+.clear{clear:both}
+.input-grande{width:330px;}
+.input-medio{width:250px;}
+.input-pequeno{width:150px;}
+.center{align:center}
+.sectiondivisao{height:250px;clear:both}
+.dataright{float:right;margin-right:100px;}
+hr{margin-bottom: 40px;}
+

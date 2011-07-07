@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @training.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @training.date %>
+</p>
+
+<p>
+  <b>Study load:</b>
+  <%= @training.study_load %>
+</p>
+
+<p>
+  <b>Closed:</b>
+  <%= @training.closed %>
+</p>
+
+<p>
+  <b>Students:</b>
+  <%= @training.students %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @training.price %>
+</p>
+
+<p>
+  <b>Objective:</b>
+  <%= @training.objective %>
+</p>
+
+<p>
+  <b>Target audience:</b>
+  <%= @training.target_audience %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @training.content %>
+</p>
+
+<p>
+  <b>Instructor:</b>
+  <%= @training.instructor.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_training_path(@training) %> |
+<%= link_to 'Back', trainings_path %>
+

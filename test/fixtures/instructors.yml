@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  age: 1
+  experience: MyText
+  qualifications: MyText
+  hobbies: MyText
+
+two:
+  name: MyString
+  age: 1
+  experience: MyText
+  qualifications: MyText
+  hobbies: MyText

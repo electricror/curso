@@ -1,0 +1,66 @@
+<%= form_for [:admin, @training] do |f| %>
+  <% if @training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training.errors.count, "error") %> prohibited this training from being saved:</h2>
+
+      <ul>
+      <% @training.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+   <br />
+  <br />
+  <h2 align="center">Criando|Editando Cadastro de Treinamentos</h2>
+  <h4 align="center">Em cada campo, terá um aviso indicando sobre oque é preciso para preencher os dados corretamente </h4>
+  <hr/>
+
+  <div id="form">
+    <p class="left"> <%= f.label 'name - Nome do Curso' %><br />
+        <%= f.text_field :name, :class => 'input-medio', :placeholder => "ex: Espaço confinado"%></p>
+
+    <p  class="right"> <%= f.label "Price - Preço" %><br />
+        <%= f.text_field :price, :class => 'input-medio' ,:placeholder => "ex: 150,00"%></p>
+
+    <p class="left"> <%= f.label "Study_load - Carga horaria" %><br />
+        <%= f.text_field :study_load, :class => 'input-medio',:placeholder => "ex: 150 "%></p>
+
+    <p  class="right"> <%= f.label 'students - numero Studantes' %><br />
+        <%= f.text_field :students, :class => 'input-medio' ,:placeholder => "ex: 30 "%></p>
+
+    <br />
+    <p  class="left"> <%= f.label 'Este curso vc deve lançar como fechado ou aberto ao publico. Deixe em branco para ser publicado !' %><br />
+        <%= f.check_box :closed %></p>
+
+
+    <p class="clear">
+      <%= f.label 'Escolha um instrutor para ser vinculado ao curso' %><br />
+
+      <%= f.select :instructor_id, Instructor.all.collect{|l| [l.name, l.id]} %>
+    </p>
+
+    <p class="clear">
+      <%= f.label 'content - conteudo do curso' %><br />
+      <%= f.text_area :content, :rows => 15, :cols => 72 ,:placeholder => "ex: Deixei todo conteudo do curso , que seja necessario para que o aluno acompanhe sem nehuma duvida sobre oque o curso"%></p>
+
+    <p>
+      <%= f.label 'objective - Objetivo do curso' %><br />
+      <%= f.text_area :objective, :rows => 15, :cols => 72, :placeholder => "ex: Aqui uma explicaçao sobre oque o curso tem a oferecer " %></p>
+
+    <p>
+      <%= f.label 'target_audience - Publico alvo' %><br />
+      <%= f.text_area :target_audience, :rows => 15, :cols => 72 , :placeholder => "ex: Aqui uma breve , informando qual publico alvo do curso " %></p>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+
+
+
+
+<% end %>
+
