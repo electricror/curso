@@ -1,0 +1,37 @@
+<h1>Listing students</h1>
+
+ <br />
+  <br />
+  <h2 align="center">Criando|Editando Cadastro de Treinamentos</h2>
+  <h4 align="center">Em cada campo, terá um aviso indicando sobre oque é preciso para preencher os dados corretamente </h4>
+  <hr/>
+
+
+<div id="form">
+
+    <%= form_for @inquiry do |f| %>
+
+       <%= error_messages_for @inquiry %>
+
+      <p class="centro"><%= f.label "Escolha uma solicitação " %><br />
+       <%= select_tag "payment", options_for_select([ "-- Escolha 1 motivo --","Gostaria de tirar uma dúvida", "Gostaria de registrar uma reclamação", "Quero dar minha opnião", "Gostaria de relatar um problema no sistema ", "Outros"], "-- Escolha 1 motivo --" ) %></p>
+
+
+      <p  class="centro"> <%= f.label "Nome" %><br />
+        <%= f.text_field :name, :class => 'input-grande' ,:placeholder => "ex. Paulo Marques"%></p>
+
+      <p  class="centro"> <%= f.label "Email" %><br />
+        <%= f.text_field :email, :class => 'input-grande' ,:placeholder => "ex. PauloMarques@gmail.com"%></p>
+
+      <p>
+      <%= f.label 'message' %><br />
+      <%= f.text_area :message, :rows => 15, :cols => 72 , :placeholder => "ex: Aqui uma breve , informando qual sua solicitação" %></p>
+
+
+
+
+
+      <p><%= f.submit  "Enviar ..", :class => "button" %></p>
+    <% end %>
+<div>
+

@@ -5,9 +5,9 @@ Curso::Application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :trainings
-  resources :instructors
-
+  resources :trainings, :only => [:index,:show], :path => "treinamentos"
+  resources :instructors, :only => [:index,:show], :path => "professores"
+  resources :inquiries, :only => [:new, :create], :path => "contact"
 
   root :to => "pages#index"
 

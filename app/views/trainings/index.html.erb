@@ -13,8 +13,7 @@
     <th>Content</th>
     <th>Instructor</th>
     <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @trainings.each do |training| %>
@@ -30,13 +29,10 @@
     <td><%= training.content %></td>
     <td><%= training.instructor.name %></td>
     <td><%= link_to 'Show', training %></td>
-    <td><%= link_to 'Edit', edit_training_path(training) %></td>
-    <td><%= link_to 'Destroy', training, :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Training', new_training_path %>
 
